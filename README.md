@@ -2,9 +2,9 @@
 spring boot: Invalid character found in the request target
 
 All tests pass:
-- unit [HelloControllerTest](../src/test/java/com/example/HelloControllerTest.java)
-- integration [HelloIntegrationTest](../src/test/java/com/example/HelloIntegrationTest.java)
-- htmlunit [HelloHtmlUnitTest](../src/test/java/com/example/HelloHtmlUnitTest.java)
+- unit [HelloControllerTest](https://github.com/dirkdeyne/tomcat-relaxed-chars-issue/blob/master/src/test/java/com/example/HelloControllerTest.java)
+- integration [HelloIntegrationTest](https://github.com/dirkdeyne/tomcat-relaxed-chars-issue/blob/master/src/test/java/com/example/HelloIntegrationTest.java)
+- htmlunit [HelloHtmlUnitTest](https://github.com/dirkdeyne/tomcat-relaxed-chars-issue/blob/master/src/test/java/com/example/HelloHtmlUnitTest.java)
 
 But when we make actual call via browser we get an error
 
