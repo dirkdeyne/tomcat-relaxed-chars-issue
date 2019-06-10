@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
  *
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest({HelloController.class})
 public class HelloControllerTest {
 
 	@Autowired
@@ -30,5 +30,11 @@ public class HelloControllerTest {
 		       .andDo(print()).andExpect(status().isOk())
 			   .andExpect(content().string(containsString("Hello World")));
 	}
-
+	
+	@Test
+    public void illeagalCharsTest() throws Exception {
+        mockMvc.perform(get("/hello").param("message", "hi [^_^]"))
+               .andDo(print()).andExpect(status().isOk())
+               .andExpect(content().string(containsString("[^_^]")));
+    }
 }
