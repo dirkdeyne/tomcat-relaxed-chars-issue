@@ -1,6 +1,10 @@
 # tomcat-relaxed-chars-issue
 spring boot: Invalid character found in the request target
 
+when calling:
+- http://localhost:8080/hello?message=[^_^]
+- http://localhost:8080/hello/[^_^]
+
 All tests pass:
 - unit [HelloControllerTest](https://github.com/dirkdeyne/tomcat-relaxed-chars-issue/blob/issue/src/test/java/com/example/HelloControllerTest.java)
 - integration [HelloIntegrationTest](https://github.com/dirkdeyne/tomcat-relaxed-chars-issue/blob/issue/src/test/java/com/example/HelloIntegrationTest.java)
