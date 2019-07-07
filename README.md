@@ -24,3 +24,10 @@ java.lang.IllegalArgumentException: Invalid character found in the request targe
   at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.19.jar:9.0.19]
   at java.lang.Thread.run(Thread.java:748) [na:1.8.0_162]
 ```
+
+
+relaxedPathChars  
+The HTTP/1.1 specification requires that certain characters are %nn encoded when used in URI paths. Unfortunately, many user agents including all the major browsers are not compliant with this specification and use these characters in unencoded form. To prevent Tomcat rejecting such requests, this attribute may be used to specify the additional characters to allow. If not specified, no additional characters will be allowed. The value may be any combination of the following characters: " < > [ \ ] ^ ` { | } . Any other characters present in the value will be ignored.
+
+relaxedQueryChars 
+The HTTP/1.1 specification requires that certain characters are %nn encoded when used in URI query strings. Unfortunately, many user agents including all the major browsers are not compliant with this specification and use these characters in unencoded form. To prevent Tomcat rejecting such requests, this attribute may be used to specify the additional characters to allow. If not specified, no additional characters will be allowed. The value may be any combination of the following characters: " < > [ \ ] ^ ` { | } . Any other characters present in the value will be ignored.
